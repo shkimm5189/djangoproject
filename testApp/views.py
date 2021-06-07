@@ -7,7 +7,7 @@ from django.shortcuts import render
 def index(req):
     question_list = Question.objects.order_by('-create_date')
     context = {'question_list': question_list}
-    return render(req, 'pages/question_list.html',context)
+    return render(req, 'pages/home.html',context)
 
 def test(req):
     return HttpResponse("test")

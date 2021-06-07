@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% if question_list %}
-        <ul>
-        {% for q in question_list %}
-            <li><a href="/testApp/{{ q.id }}">{{ q.subject }}</a> </li>
-        {% endfor %}
+{% extends 'base.html'%}
+{% block content %}
 
-        </ul>
-    {% else %}
-        <p>"질문 없음"</p>
-    {% endif %}
-</body>
-</html>
+{% endblock %}
+

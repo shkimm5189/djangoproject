@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    {% include "fregment/head.html" %}
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class = "wrapper">
+        {% include "fregment/header.html" %}
+        {% include "fregment/sidebar.html" %}
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% include "fregment/footer.html" %}
+    </div>
+    <script src="{% static 'adminlte.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>
