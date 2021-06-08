@@ -2,6 +2,6 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def index(req):
-    return
+def home_page(req):
+    return render(req, "pages/home.html")
 
