@@ -1,21 +1,18 @@
 $(function () {
-    getData();
+    getAllData();
 
     let myData = {};
     function addBoardRow(row,i) {
         var boardRow = "<tr>";
         boardRow += "<td>"+ i +"</td>";
         for (k in row){
-            if (k == 'url'){
-                continue
-            }
-
             boardRow += "<td>" + row[k]+"</td>";
         }
         boardRow += "</tr>"
         return boardRow;
     }
-    function getData() {
+
+    function getAllData() {
         $.ajax({
             type:'GET',
             url:'/api/boards',
@@ -31,8 +28,9 @@ $(function () {
         })
     }
 
+
     $("#registerBtn").on("click",function (e) {
-        alert("go to HELL")
+        window.location.href="register";
     });
-})(JQuery);
+})(jQuery);
 
