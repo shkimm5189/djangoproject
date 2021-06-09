@@ -13,6 +13,8 @@ class MyBoard(models.Model):
     update_by = models.CharField(max_length=20, null=False)
 
     class Meta:
+        # 테이블 최신순 조회
+        ordering = ['-create_at']
         db_table = "board_test"
 
     def __str__(self):
