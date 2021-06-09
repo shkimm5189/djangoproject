@@ -20,5 +20,5 @@ from testApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('testApp/', include('testApp.urls')),
-    path('boards/', include('rest_api_board.urls'), name="rest_api_board"),
+    path('api/boards/', include('rest_api_board.urls'), name="rest_api_board"),
 ]

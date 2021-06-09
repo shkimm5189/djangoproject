@@ -1,4 +1,5 @@
 {% extends "base.html"%}
+{% load static %}
 {% block content %}
     <!-- 해당 페이지 제목 -->
     <section class="content-header">
@@ -42,25 +43,20 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>User</th>
+                      <th>Subject</th>
+                      <th>Author</th>
                       <th>Date</th>
-                      <th>Status</th>
                       <th>Content</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr >
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                  <tbody id="main_table">
+
+
                   </tbody>
                 </table>
               </div>
                 <div>
-                    <button>글 싸기</button>
+                    <button id="registerBtn">글 싸기</button>
                 </div>
               <!-- /.card-body -->
             </div>
@@ -68,5 +64,6 @@
           </div>
         </div>
     </section>
-    
+    {% include "fregment/footer.html" %}
+    <script src="/static/app/home.js"></script>
 {% endblock %}
