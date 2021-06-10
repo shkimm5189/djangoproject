@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyBoard
-        fields = ('subject', 'create_by', 'create_at', 'content')
+        fields = ('id', 'subject', 'create_by', 'create_at', 'content')
 

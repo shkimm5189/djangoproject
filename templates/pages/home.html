@@ -42,7 +42,7 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>No</th>
                       <th>Subject</th>
                       <th>Author</th>
                       <th>Date</th>
@@ -51,12 +51,12 @@
                   </thead>
                   <tbody id="main_table">
 
-
                   </tbody>
                 </table>
               </div>
                 <div>
-                    <button id="registerBtn">글 싸기</button>
+                    <button id="registerBtn" class="btn btn-primary">글 싸기</button>
+
                 </div>
               <!-- /.card-body -->
             </div>
@@ -66,4 +66,5 @@
     </section>
     {% include "fregment/footer.html" %}
     <script src="/static/app/home.js"></script>
+    {% include "fregment/board_detail_modal.html" %}
 {% endblock %}

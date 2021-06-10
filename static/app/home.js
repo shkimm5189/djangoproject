@@ -3,9 +3,12 @@ $(function () {
 
     let myData = {};
     function addBoardRow(row,i) {
-        var boardRow = "<tr>";
+        var boardRow = "<tr  data-toggle=\"modal\" data-target=\"#myLargeModal\">";
         boardRow += "<td>"+ i +"</td>";
         for (k in row){
+            if(k == 'id'){
+                continue;
+            }
             boardRow += "<td>" + row[k]+"</td>";
         }
         boardRow += "</tr>"
@@ -32,5 +35,7 @@ $(function () {
     $("#registerBtn").on("click",function (e) {
         window.location.href="register";
     });
+
+
 })(jQuery);
 
