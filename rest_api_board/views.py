@@ -41,7 +41,7 @@ class BoardView(APIView):
                 updateBoardSerializer.save()
                 return Response(updateBoardSerializer.data, status=status.HTTP_200_OK)
             else:
-                return Response("invalid request", status=status.HTTP_400_BAD_REQUEST)
+                return Response(updateBoardSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     """
     POST / boards / {id}    
