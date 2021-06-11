@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'testApp.apps.TestappConfig',
-    'rest_api_board.apps.RestApiBoardConfig'
+    'rest_api_board.apps.RestApiBoardConfig',
+    'django.contrib.auth',
+    'login_func.apps.LoginFuncConfig',
 ]
 
 MIDDLEWARE = [
