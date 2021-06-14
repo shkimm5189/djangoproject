@@ -17,7 +17,6 @@ class BoardView(APIView):
     """
     def get(self, req, **kwargs):
         boardId = kwargs.get('idx')
-
         if boardId is None:
             boardQueryset = MyBoard.objects.all()
             boardQuerysetSerializer = BoardSerializer(boardQueryset, many=True)

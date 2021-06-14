@@ -38,11 +38,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # Django Rest Framework
     'rest_framework',
+    'rest_framework.authtoken',
+
+    # Auth
+    'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+
+    # Apps
     'testApp.apps.TestappConfig',
     'rest_api_board.apps.RestApiBoardConfig',
-    'django.contrib.auth',
-    'login_func.apps.LoginFuncConfig',
+    'rest_api_account.apps.RestApiAccountConfig'
+
+
 ]
 
 MIDDLEWARE = [
@@ -132,3 +145,18 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Sites app setting Registration
+SITE_ID = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION,CLASSES': [
+        'rest_framework.permissions.IsAdminUser'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+
+LOGIN_REDIRECT_URL = '/testApp'

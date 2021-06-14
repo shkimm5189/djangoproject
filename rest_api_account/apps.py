@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class LoginFuncConfig(AppConfig):
+class RestApiAccountConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'login_func'
+    name = 'rest_api_account'

@@ -8,5 +8,8 @@ def home_page(req):
 def register_board(req):
     return render(req, "pages/register_board.html")
 
-def testModal(req):
-    return render(req, "pages/updateDelete_board.html")
+def login(req):
+    return render(req, "pages/login.html")
+
+def sign_up(req):
+    return render(req, "pages/sign_up.html")
