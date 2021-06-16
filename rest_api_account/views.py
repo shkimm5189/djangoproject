@@ -24,6 +24,15 @@ class LoginView(APIView):
         user = authenticate(username=request.data['id'], password=request.data['password'])
         if user is not None:
             token = Token.objects.get(user=user)
-            return Response({"Token": token.key})
+            response = Response()
+            response.set_cookie(key="Token", value=token.key)
+            response.data = {
+                "Token": token.key
+            }
+            return response
         else:
             return Response("넌 로그인할 자격이 없다.", status.HTTP_401_UNAUTHORIZED)
+
+
+class LoginOutView(APIView):
+    def get(self, request):
