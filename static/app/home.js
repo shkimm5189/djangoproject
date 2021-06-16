@@ -14,6 +14,19 @@ $(function () {
                 idToIdx[i] = row[k];
                 continue;
             }
+            if(k == 'create_at'){
+                date = row[k].split('T');
+                days = date[0].split('-');
+                dateformat = days[1]+"월"+days[2]+"일 ";
+                times = date[1].substr(0,5).split(':');
+                timeformat = times[0]+":"+times[1];
+                boardRow += "<td>" + dateformat + timeformat + "</td>";
+                continue
+            }
+            if(k== 'content'){
+                continue
+            }
+
             boardRow += "<td>" + row[k]+"</td>";
         }
         boardRow += "</tr>";
@@ -34,7 +47,19 @@ $(function () {
             }
         })
     }
+     function getCookie(name) {
+        var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return value? value[2] : null;
+    }
 
+    function update_by() {
+        let name = getCookie('nickname')
+        if (name == null) {
+            return "AnonymousUser"
+        } else {
+            return name;
+        }
+    }
 
     $("#registerBtn").on("click",function (e) {
         window.location.href="register";
@@ -56,7 +81,7 @@ $(function () {
         let myData = {
             subject: $("#input_modal_subject").val(),
             content: $("#textarea_modal_content").val(),
-            create_by: "kim"        // will be change not create_by be update_by
+            update_by : update_by()
         };
         $.ajax({
             type:'PUT',
